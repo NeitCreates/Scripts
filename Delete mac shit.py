@@ -12,7 +12,7 @@ for i in mac_dirs:
 	print(i)
 	shutil.rmtree(i)
 
-dir_del_templates = ["Ableton Project Info", "Backup"]
+dir_del_templates = ["Ableton Project Info", "Backup"]  # Ableton-specific files
 dirs = []
 for i in dir_del_templates:
 	dirs.extend(dir_to_clean.rglob(i))
@@ -21,7 +21,7 @@ for i in dirs:
 	print(i)
 	shutil.rmtree(i)
 
-file_del_templates = [".DS_store", "Icon_", "*.als", "*.asd"]
+file_del_templates = [".DS_store", "Icon_", "*.als", "*.asd"]  # .als and .asd - Ableton files
 files = []
 for i in file_del_templates:
 	files.extend(list(dir_to_clean.rglob(i)))
